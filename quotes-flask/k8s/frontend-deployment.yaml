@@ -6,7 +6,7 @@ metadata:
     app: frontend
   name: frontend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: frontend
@@ -32,7 +32,7 @@ spec:
           env:
             # load namespace from downward api
             # https://github.com/kubernetes/kubernetes/blob/release-1.0/docs/user-guide/downward-api.md
-            - name: NAMESPACE_12
+            - name: NAMESPACE
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
